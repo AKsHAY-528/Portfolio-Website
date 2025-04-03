@@ -1,53 +1,81 @@
-/* Project Card */
-.project-card-view {
-    text-align: center;
-    padding: 20px;
-    border-radius: 10px;
-    background: #1e1e2e;
-    color: white;
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+/* === CYBERPUNK GLITCH EFFECT === */
+
+@keyframes darkWavy {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(1deg) translateX(3px); }
+    50% { transform: rotate(-1deg) translateX(-3px); }
+    75% { transform: rotate(1deg) translateX(3px); }
+    100% { transform: rotate(0deg); }
   }
   
-  /* Hover Effect */
-  .project-card-view:hover {
-    transform: translateY(-10px) scale(1.05);
-    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.3);
+  @keyframes cyberGlow {
+    0% { box-shadow: 0 0 5px rgba(255, 0, 255, 0.5); }
+    50% { box-shadow: 0 0 25px rgba(0, 255, 255, 0.8); }
+    100% { box-shadow: 0 0 5px rgba(255, 0, 255, 0.5); }
   }
   
-  /* Custom Project Cover with Icons */
-  .project-cover {
+  @keyframes rgbGlitch {
+    0% { text-shadow: -2px -2px 0px red, 2px 2px 0px cyan; }
+    50% { text-shadow: 2px -2px 0px lime, -2px 2px 0px blue; }
+    100% { text-shadow: -2px -2px 0px red, 2px 2px 0px cyan; }
+  }
+  
+  @keyframes staticNoise {
+    0% { background-position: 0% 0%; }
+    100% { background-position: 100% 100%; }
+  }
+  
+  @keyframes flicker {
+    0% { opacity: 1; }
+    50% { opacity: 0.6; }
+    100% { opacity: 1; }
+  }
+  
+  /* === PROJECT CARD DARK STYLE === */
+  
+  .project-card {
+    position: relative;
+    transition: all 0.3s ease-in-out;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+  }
+  
+  .project-card:hover {
+    animation: darkWavy 0.4s ease-in-out infinite alternate, cyberGlow 1.5s infinite alternate;
+    background: linear-gradient(135deg, #110011, #000);
+    border-color: #ff00ff;
+    color: #00ffea !important;
+    transform: scale(1.05) rotate(1deg);
+  }
+  
+  /* === CYBERPUNK TEXT EFFECT === */
+  .project-card:hover .project-title {
+    animation: rgbGlitch 0.3s infinite alternate;
+  }
+  
+  /* === STATIC NOISE EFFECT === */
+  .project-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: 120px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 10px;
-    font-size: 50px;
-    color: white;
-    background: linear-gradient(135deg, #6f42c1, #8e44ad);
-    transition: background 0.3s ease-in-out;
+    height: 100%;
+    background: url("https://upload.wikimedia.org/wikipedia/commons/3/3f/Static.png");
+    opacity: 0.03;
+    mix-blend-mode: difference;
+    animation: staticNoise 1s linear infinite;
   }
   
-  /* Hover Effect for Cover */
-  .project-card-view:hover .project-cover {
-    background: linear-gradient(135deg, #8e44ad, #6f42c1);
-  }
-  
-  /* Icons inside project cover */
+  /* === ICON EFFECT === */
   .project-icon {
-    font-size: 50px;
-    color: white;
+    transition: transform 0.2s ease-in-out, color 0.2s ease-in-out;
   }
   
-  /* GitHub Button */
-  .project-card-view .btn-primary {
-    background: #6f42c1;
-    border: none;
-    transition: background 0.3s ease-in-out;
-  }
-  
-  /* GitHub Button Hover */
-  .project-card-view .btn-primary:hover {
-    background: #8e44ad;
+  .project-card:hover .project-icon {
+    transform: rotate(360deg) scale(1.3);
+    color: #ff00ff;
+    animation: flicker 0.5s infinite alternate;
   }
   
