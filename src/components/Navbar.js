@@ -11,6 +11,7 @@ import {
   AiOutlineHome,
   AiOutlineFundProjectionScreen,
   AiOutlineUser,
+  AiOutlineExperiment, // Experience Icon
 } from "react-icons/ai";
 
 import { CgFileDocument } from "react-icons/cg";
@@ -34,10 +35,6 @@ function NavBar() {
     transition: "color 0.3s ease-in-out",
   };
 
-  const navItemHoverStyle = {
-    color: "#ffcc00", // Change to your preferred hover color
-  };
-
   return (
     <Navbar
       expanded={expand}
@@ -51,9 +48,7 @@ function NavBar() {
         </Navbar.Brand>
         <Navbar.Toggle
           aria-controls="responsive-navbar-nav"
-          onClick={() => {
-            updateExpanded(expand ? false : "expanded");
-          }}
+          onClick={() => updateExpanded(expand ? false : "expanded")}
         >
           <span></span>
           <span></span>
@@ -96,10 +91,20 @@ function NavBar() {
                 onMouseEnter={(e) => (e.target.style.color = "#ffcc00")}
                 onMouseLeave={(e) => (e.target.style.color = "")}
               >
-                <AiOutlineFundProjectionScreen
-                  style={{ marginBottom: "2px" }}
-                />{" "}
-                Projects
+                <AiOutlineFundProjectionScreen style={{ marginBottom: "2px" }} /> Projects
+              </Nav.Link>
+            </Nav.Item>
+
+            <Nav.Item>
+              <Nav.Link
+                as={Link}
+                to="/experience"
+                onClick={() => updateExpanded(false)}
+                style={navItemStyle}
+                onMouseEnter={(e) => (e.target.style.color = "#ffcc00")}
+                onMouseLeave={(e) => (e.target.style.color = "")}
+              >
+                <AiOutlineExperiment style={{ marginBottom: "2px" }} /> Experience
               </Nav.Link>
             </Nav.Item>
 
