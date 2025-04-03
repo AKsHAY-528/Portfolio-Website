@@ -1,18 +1,53 @@
-.project-card {
-    transition: transform 0.3s ease-in-out;
-  }
-  
-  .project-card:hover {
-    transform: scale(1.05);
-  }
-  
-  .project-card-view {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+/* Project Card */
+.project-card-view {
+    text-align: center;
+    padding: 20px;
     border-radius: 10px;
-    overflow: hidden;
+    background: #1e1e2e;
+    color: white;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   }
   
+  /* Hover Effect */
   .project-card-view:hover {
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.3);
+  }
+  
+  /* Custom Project Cover with Icons */
+  .project-cover {
+    width: 100%;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    font-size: 50px;
+    color: white;
+    background: linear-gradient(135deg, #6f42c1, #8e44ad);
+    transition: background 0.3s ease-in-out;
+  }
+  
+  /* Hover Effect for Cover */
+  .project-card-view:hover .project-cover {
+    background: linear-gradient(135deg, #8e44ad, #6f42c1);
+  }
+  
+  /* Icons inside project cover */
+  .project-icon {
+    font-size: 50px;
+    color: white;
+  }
+  
+  /* GitHub Button */
+  .project-card-view .btn-primary {
+    background: #6f42c1;
+    border: none;
+    transition: background 0.3s ease-in-out;
+  }
+  
+  /* GitHub Button Hover */
+  .project-card-view .btn-primary:hover {
+    background: #8e44ad;
   }
   

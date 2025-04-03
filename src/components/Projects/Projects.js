@@ -2,13 +2,10 @@ import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import ProjectCard from "./ProjectCards";
 import Particle from "../Particle";
-import portfolio from "../../Assets/Projects/portfolio.png";
-import computerVision from "../../Assets/Projects/computerVision.png";
-import passwordGenerator from "../../Assets/Projects/passwordGenerator.png";
-import memoryCard from "../../Assets/Projects/memoryCard.png";
-import morseCode from "../../Assets/Projects/morseCode.png";
-import pacman from "../../Assets/Projects/pacman.png";
-import "../../styles/Projects.css";  // Make sure to add hover effects here
+import "./Projects.css";
+import { FaReact, FaJava } from "react-icons/fa";
+
+import { SiPytorch, SiSpringboot } from "react-icons/si";
 
 function Projects() {
   return (
@@ -24,7 +21,7 @@ function Projects() {
         <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
           <Col md={4} className="project-card">
             <ProjectCard
-              imgPath={portfolio}
+              icon={<FaReact className="project-icon" />}
               title="Portfolio Website (React & JS)"
               description="A personal portfolio website built using React.js to showcase my projects and skills."
               ghLink="https://github.com/AKsHAY-528/Portfolio-Website"
@@ -33,16 +30,16 @@ function Projects() {
 
           <Col md={4} className="project-card">
             <ProjectCard
-              imgPath={computerVision}
+              icon={<SiPytorch className="project-icon" />}
               title="Computer Vision (ML & Deep Learning)"
               description="A computer vision project using deep learning techniques to classify images."
-              ghLink="https://github.com/Dhanush0000/Computer_vision"
+              ghLink="https://github.com/AKsHAY-528/Computer-Vision"
             />
           </Col>
 
           <Col md={4} className="project-card">
             <ProjectCard
-              imgPath={passwordGenerator}
+              icon={<FaJava className="project-icon" />}
               title="Password Generator (Java)"
               description="A Java-based password generator with customizable options for security."
               ghLink="https://github.com/AKsHAY-528/Password-Generator"
@@ -51,7 +48,7 @@ function Projects() {
 
           <Col md={4} className="project-card">
             <ProjectCard
-              imgPath={memoryCard}
+              icon={<FaJava className="project-icon" />}
               title="Memory Card Game (Java)"
               description="A fun memory card game built using Java, featuring a timer and error tracking."
               ghLink="https://github.com/AKsHAY-528/Memory-Card-Game"
@@ -60,7 +57,7 @@ function Projects() {
 
           <Col md={4} className="project-card">
             <ProjectCard
-              imgPath={morseCode}
+              icon={<FaJava className="project-icon" />}
               title="Morse Code Translator (Java)"
               description="A Java application to convert text to Morse code and vice versa."
               ghLink="https://github.com/AKsHAY-528/Morse-Code-Translator"
@@ -69,7 +66,7 @@ function Projects() {
 
           <Col md={4} className="project-card">
             <ProjectCard
-              imgPath={pacman}
+              icon={<SiSpringboot className="project-icon" />}
               title="PacMan Clone (Java)"
               description="A Java-based Pac-Man clone with smooth animations and collision detection."
               ghLink="https://github.com/AKsHAY-528/Pac-Man-Java-"
