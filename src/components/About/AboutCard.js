@@ -11,7 +11,7 @@ function AboutCard() {
             Hi Everyone, I am <span className="purple">Akshay Sharma TR </span>
             from <span className="purple"> Karnataka , India.</span>
             <br />
-            I am currently employed as a software developer at Juspay.
+            I am currently a Final Year CSE Student 
             <br />
             I have completed Integrated MSc (IMSc) in Maths and Computing at BIT
             Mesra.
