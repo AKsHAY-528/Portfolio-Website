@@ -4,7 +4,7 @@ import { FaJava } from "react-icons/fa";
 import { SiJavascript } from "react-icons/si";
 import { FaLaptopCode } from "react-icons/fa";
 import { FaBrain } from "react-icons/fa";
-import homeLogo from "../../Assets/home-main.svg";
+import homeLogo from "../../Assets/home.png";
 import Particle from "../Particle";
 
 function Home() {
